@@ -1,0 +1,12 @@
+vlozit - That asks you how mutch you wanna deposit into the bank account.
+vybrat - That asks you how mutch you wanna withdraw from your bank account.
+zobrazit - That shows you how mutch cash and bank money you have.
+vydelat - That makes you money into your cash every x/s you can upgrade the value.
+obchod - That shows up all the upgrades and you can buy them with bank money.
+ulozit - That saves your game into another file and shows you where you can get more info about the game.
+konec - That shuts down the game.
+reset - That will reset your progress with no more asking be carefull.
+
+Hiden commands
+
+cls - that clears the terminal.
