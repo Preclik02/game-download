@@ -14,10 +14,12 @@ int main() {
     int bank = 0;
     int cash = 500;
     int vydelek = 10;
-    int suma;
     int cena = 750;
-    string akce;
+    int suma;
     int upgrade;
+    string akce;
+    string username;
+
 
     std::ifstream inFile("save.txt");
     if (inFile.is_open()) {
@@ -31,7 +33,7 @@ int main() {
 
     while (true){
         cout << "\n";
-        cout << "(vlozit, vybrat, zobrazit, vydelat, obchod, konec)\n";
+        cout << "(vlozit, vybrat, zobrazit, vydelat, ulozit, obchod, reset, konec)\n";
         cout << "Co chces udelat: ";
         cin >> akce;
 
@@ -96,11 +98,29 @@ int main() {
             outFile.close();
             break;
         }
+        else if (akce == "ulozit") { 
+            cout << "Napis svoje jmeno: ";
+            cin >> username;
+            std::ofstream saveFile("leaderboard.txt");
+            if (saveFile.is_open()) {
+                saveFile << "Jmeno: " << username << "\n";
+                saveFile << "Penize: " << cash << "\n";
+                saveFile << "Banka: " << bank << "\n";
+                saveFile.close();
+                cout << "Hra ulozena!\n";
+                cout << "Pro info o hre: https://preclik02.github.io/game-download/";
+            }
+        }
+        else if (akce == "reset") {
+            bank = 0;
+            cash = 500; 
+            cena = 50;
+            vydelek = 10;
+            cout << "Hra byla resetovana\n";
+        }
         else {
             cout << "Neplatna akce\n";
         }
-
-
     }
 
     return 0;
